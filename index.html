@@ -179,7 +179,6 @@
             </div>
         </div>
     </div>
-    <!-- Header -->
     <header class="fixed top-0 left-0 w-full z-50 transition-all duration-500" id="header">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <a href="#home">
@@ -209,7 +208,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
         <div class="container mx-auto px-4 py-20 relative z-10">
             <div class="flex flex-col md:flex-row items-center">
@@ -245,7 +243,6 @@
         </div>
     </section>
 
-    <!-- Sobre Nós Section -->
     <section id="sobre" class="py-20 bg-black relative">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
@@ -279,7 +276,6 @@
         </div>
     </section>
 
-    <!-- Serviços Section -->
     <section id="servicos" class="py-20 bg-black relative">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
@@ -401,7 +397,6 @@
         </div>
     </section>
 
-    <!-- Portfólio Section -->
     <section id="portfolio" class="py-20 bg-black relative">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
@@ -465,7 +460,6 @@
         </div>
     </section>
 
-    <!-- Contato Section -->
     <section id="contato" class="py-20 bg-black relative">
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
@@ -506,7 +500,6 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-                    <!-- Info 1 -->
                     <div class="card bg-gray-900 bg-opacity-50 rounded-xl p-6 border border-gray-800 flex flex-col items-center text-center reveal">
                         <div class="w-12 h-12 bg-primary bg-opacity-20 rounded-full flex items-center justify-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -518,7 +511,6 @@
                         <p class="text-gray-400">(99) 99999-9999</p>
                     </div>
 
-                    <!-- Info 2 -->
                     <div class="card bg-gray-900 bg-opacity-50 rounded-xl p-6 border border-gray-800 flex flex-col items-center text-center reveal">
                         <div class="w-12 h-12 bg-primary bg-opacity-20 rounded-full flex items-center justify-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -530,7 +522,6 @@
                         <p class="text-gray-400">suporte@webmuza.com.br</p>
                     </div>
 
-                    <!-- Info 3 -->
                     <div class="card bg-gray-900 bg-opacity-50 rounded-xl p-6 border border-gray-800 flex flex-col items-center text-center reveal">
                         <div class="w-12 h-12 bg-primary bg-opacity-20 rounded-full flex items-center justify-center mb-4">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -547,7 +538,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="py-12 bg-black border-t border-gray-900">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
@@ -587,7 +577,6 @@
         </div>
     </footer>
 
-    <!-- Toast Notifications -->
     <div class="toast-notification bg-gray-900 rounded-lg p-4 border border-primary shadow-lg" id="cookie-toast">
         <div class="flex items-start">
             <div class="flex-shrink-0 p-1 bg-primary bg-opacity-20 rounded-full">
@@ -658,7 +647,6 @@
         <div class="progress-bar"></div>
     </div>
 
-    <!-- Modals -->
     <div class="fixed inset-0 flex items-center justify-center z-50 hidden" id="success-modal">
         <div class="modal absolute inset-0"></div>
         <div class="bg-gray-900 rounded-xl p-8 max-w-md w-full relative z-10 border border-green-300 transform transition-all duration-300 scale-95 opacity-0" id="success-modal-content">
@@ -695,15 +683,12 @@
         </div>
     </div>
 
-    <!-- JavaScript -->
     <script>
 
         document.addEventListener('DOMContentLoaded', function () {
             const splashScreen = document.getElementById('splash-screen');
 
-            // Verifica se é um carregamento de página ou navegação
             if (performance.navigation.type === 1 || !sessionStorage.getItem('splashShown')) {
-                // Mostra a tela de splash por 2.5 segundos
                 setTimeout(() => {
                     splashScreen.classList.add('splash-fade-out');
                     setTimeout(() => {
@@ -711,21 +696,17 @@
                     }, 500);
                 }, 1000);
 
-                // Marca que o splash já foi mostrado nesta sessão
                 sessionStorage.setItem('splashShown', 'true');
             } else {
-                // Se não for um reload, esconde o splash imediatamente
                 splashScreen.style.display = 'none';
             }
 
-            // Limpa o sessionStorage quando a página é fechada
             window.addEventListener('beforeunload', function () {
                 sessionStorage.removeItem('splashShown');
             });
         });
 
         document.addEventListener('DOMContentLoaded', function () {
-            // Reveal animations on scroll
             const revealElements = document.querySelectorAll('.reveal');
 
             function reveal() {
@@ -741,9 +722,8 @@
             }
 
             window.addEventListener('scroll', reveal);
-            reveal(); // Initial check
+            reveal();
 
-            // Mobile menu toggle
             const menuToggle = document.getElementById('menu-toggle');
             const mobileMenu = document.getElementById('mobile-menu');
 
@@ -753,7 +733,6 @@
                 });
             }
 
-            // Header scroll effect
             const header = document.getElementById('header');
 
             if (header) {
@@ -766,7 +745,6 @@
                 });
             }
 
-            // Form validation
             const contactForm = document.getElementById('contact-form');
             const successModal = document.getElementById('success-modal');
             const errorModal = document.getElementById('error-modal');
@@ -780,17 +758,14 @@
                 contactForm.addEventListener('submit', function (e) {
                     e.preventDefault();
 
-                    // Reset error messages
                     const errorMessages = document.querySelectorAll('.error-message');
                     errorMessages.forEach(el => el.classList.add('hidden'));
 
-                    // Get form values
                     const name = document.getElementById('name').value.trim();
                     const email = document.getElementById('email').value.trim();
                     const subject = document.getElementById('subject').value.trim();
                     const message = document.getElementById('message').value.trim();
 
-                    // Validate form
                     let isValid = true;
 
                     if (name === '') {
@@ -817,18 +792,15 @@
                     }
 
                     if (isValid) {
-                        // Show success modal (in a real app, you would send the form data to a server here)
                         showModal(successModal, successModalContent);
                         contactForm.reset();
                     } else {
-                        // Show error modal
                         errorMessage.textContent = 'Por favor, preencha todos os campos corretamente.';
                         showModal(errorModal, errorModalContent);
                     }
                 });
             }
 
-            // Modal close buttons
             if (successCloseBtn) {
                 successCloseBtn.addEventListener('click', function () {
                     hideModal(successModal, successModalContent);
@@ -841,7 +813,6 @@
                 });
             }
 
-            // Explore button
             const exploreBtn = document.getElementById('explore-btn');
 
             if (exploreBtn) {
@@ -850,7 +821,6 @@
                 });
             }
 
-            // Smooth scrolling for navigation links
             const navLinks = document.querySelectorAll('.nav-link');
 
             navLinks.forEach(link => {
@@ -863,7 +833,6 @@
                     if (targetElement) {
                         targetElement.scrollIntoView({ behavior: 'smooth' });
 
-                        // Close mobile menu if open
                         if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
                             mobileMenu.classList.add('hidden');
                         }
@@ -871,7 +840,6 @@
                 });
             });
 
-            // Toast notifications
             const cookieToast = document.getElementById('cookie-toast');
             const promoToast = document.getElementById('promo-toast');
             const updateToast = document.getElementById('update-toast');
@@ -881,12 +849,10 @@
             const closeUpdateToast = document.getElementById('close-update-toast');
             const acceptCookies = document.getElementById('accept-cookies');
 
-            // Show cookie toast after 2 seconds
             setTimeout(() => {
                 if (cookieToast) {
                     cookieToast.classList.add('active');
 
-                    // Auto hide after 10 seconds
                     setTimeout(() => {
                         if (cookieToast.classList.contains('active')) {
                             cookieToast.classList.remove('active');
@@ -896,12 +862,10 @@
                 }
             }, 2000);
 
-            // Show promo toast after 5 seconds
             setTimeout(() => {
                 if (promoToast) {
                     promoToast.classList.add('active');
 
-                    // Auto hide after 8 seconds
                     setTimeout(() => {
                         if (promoToast.classList.contains('active')) {
                             promoToast.classList.remove('active');
@@ -911,12 +875,10 @@
                 }
             }, 5000);
 
-            // Show update toast after 8 seconds
             setTimeout(() => {
                 if (updateToast) {
                     updateToast.classList.add('active');
 
-                    // Auto hide after 8 seconds
                     setTimeout(() => {
                         if (updateToast.classList.contains('active')) {
                             updateToast.classList.remove('active');
@@ -926,7 +888,6 @@
                 }
             }, 8000);
 
-            // Close toast buttons
             if (closeCookieToast) {
                 closeCookieToast.addEventListener('click', function () {
                     cookieToast.classList.remove('active');
@@ -952,12 +913,10 @@
                 acceptCookies.addEventListener('click', function () {
                     cookieToast.classList.remove('active');
                     cookieToast.classList.add('hide');
-                    // Here you would set a cookie to remember the user's choice
                 });
             }
         });
 
-        // Helper functions
         function showError(id, message) {
             const errorElement = document.getElementById(id);
             if (errorElement) {
